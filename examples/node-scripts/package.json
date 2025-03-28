@@ -1,0 +1,11 @@
+{
+  "name": "alpine-cron-node-examples",
+  "version": "1.0.0",
+  "description": "Example Node.js scripts for alpine-cron:node-22",
+  "scripts": {
+    "daily-task": "node dailyTask.js"
+  },
+  "dependencies": {
+    "moment": "^2.29.4"
+  }
+}

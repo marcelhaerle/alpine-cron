@@ -1,0 +1,11 @@
+# Example crontab for Node.js variant
+# Format: minute hour day month weekday command
+
+# Run the example.js script every 5 minutes
+*/5 * * * * node /scripts/example.js
+
+# Run the npm script daily at 1am
+0 1 * * * cd / && npm run daily-task
+
+# Log Node.js version once per hour for verification
+0 * * * * node --version >> /var/log/node-version.log

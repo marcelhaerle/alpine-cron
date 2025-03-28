@@ -1,0 +1,11 @@
+FROM registry.sonnvest.de/sonnvest/alpine-cron:node-22
+
+# Copy Node.js scripts
+COPY node-scripts/ /scripts/
+
+# Copy package.json for dependencies
+COPY node-scripts/package.json /
+RUN npm install
+
+# Make scripts executable
+RUN chmod +x /scripts/*.js

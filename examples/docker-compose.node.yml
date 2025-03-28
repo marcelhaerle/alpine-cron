@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  node-cron:
+    build:
+      context: .
+      dockerfile: Dockerfile.node-example
+    volumes:
+      - ./crontabs:/crontabs
+    restart: unless-stopped
