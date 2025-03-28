@@ -1,0 +1,5 @@
+# Example crontab file (save as ./crontabs/example-cron)
+# Format: minute hour day month weekday command
+
+# Run every minute
+* * * * * echo "This runs every minute" >> /var/log/cron.log

@@ -1,0 +1,7 @@
+# Example of a docker-compose.yml file
+services:
+  cron:
+    build: .
+    volumes:
+      - ./crontabs:/crontabs
+    restart: unless-stopped

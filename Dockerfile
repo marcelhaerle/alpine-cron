@@ -1,0 +1,19 @@
+FROM alpine:latest
+
+# Install cron
+RUN apk add --no-cache dcron
+
+# Create directory for cron job configurations
+RUN mkdir -p /etc/cron.d
+
+# Create a directory where external crontabs will be mounted
+RUN mkdir -p /crontabs
+
+# Copy the entrypoint script
+COPY entrypoint.sh /entrypoint.sh
+
+# Make the script executable
+RUN chmod +x /entrypoint.sh
+
+# Set the entrypoint
+ENTRYPOINT ["/entrypoint.sh"]
