@@ -38,7 +38,7 @@ RUN chmod +x /scripts/*
 #### Using the Node.js Variant
 
 ```dockerfile
-FROM registry.sonnvest.de/sonnvest/alpine-cron:node-22
+FROM haerlemarcel/alpine-cron:node-22
 
 # Add your Node.js scripts
 COPY scripts/ /scripts/
@@ -54,9 +54,9 @@ RUN chmod +x /scripts/*
 Then mount your crontab files to the `/crontabs` directory:
 
 ```bash
-docker run -d --name my-cron -v ./my-crontabs:/crontabs registry.sonnvest.de/sonnvest/alpine-cron:latest
+docker run -d --name my-cron -v ./my-crontabs:/crontabs haerlemarcel/alpine-cron:latest
 # Or for Node.js variant:
-# docker run -d --name my-node-cron -v ./my-crontabs:/crontabs registry.sonnvest.de/sonnvest/alpine-cron:node-22
+# docker run -d --name my-node-cron -v ./my-crontabs:/crontabs haerlemarcel/alpine-cron:node-22
 ```
 
 ### Using Docker Compose
@@ -66,7 +66,7 @@ Create a `docker-compose.yml` file:
 ```yaml
 services:
   cron:
-    image: registry.sonnvest.de/sonnvest/alpine-cron:latest
+    image: haerlemarcel/alpine-cron:latest
     volumes:
       - ./crontabs:/crontabs
     restart: unless-stopped
@@ -77,7 +77,7 @@ For the Node.js variant:
 ```yaml
 services:
   node-cron:
-    image: registry.sonnvest.de/sonnvest/alpine-cron:node-22
+    image: haerlemarcel/alpine-cron:node-22
     volumes:
       - ./crontabs:/crontabs
       - ./node-scripts:/scripts
