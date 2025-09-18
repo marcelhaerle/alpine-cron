@@ -26,7 +26,7 @@ This project provides a minimal Docker image built on Alpine Linux that includes
 #### Using the Base Image
 
 ```dockerfile
-FROM registry.sonnvest.de/sonnvest/alpine-cron:latest
+FROM haerlemarcel/alpine-cron:latest
 
 # Add your scripts
 COPY scripts/ /scripts/
